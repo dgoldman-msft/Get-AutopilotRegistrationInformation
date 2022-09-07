@@ -14,6 +14,6 @@ Check machine Autopilot registration status and profile assignment
 
     Start the check and export the data to individual csv files for later user
 
-> EXAMPLE 4: Get-AutopilotRegistrationCheck -EventNumber 25 -ExportData _verbose
+> EXAMPLE 4: Get-AutopilotRegistrationCheck -EventNumber 25 -ExportData -Verbose
 
     Start the check and export the data to individual csv files for later user with verbose information

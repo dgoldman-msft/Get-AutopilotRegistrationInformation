@@ -15,9 +15,6 @@ function Write-ErrorRecord {
     .PARAMETER LogPath
         Log path
 
-    .EXAMPLE
-        None
-
     .NOTES
         None
     #>
@@ -201,11 +198,11 @@ function Get-AutopilotRegistrationInformation {
 
         try {
             if ($parameters.ContainsKey('ExportData')) {
-                Write-Verbose "Saving regsitry data to $(Join-Path -Path $LogPath -ChildPath $MachineRegLogFile)"
+                Write-Verbose "Saving registry data to $(Join-Path -Path $LogPath -ChildPath $MachineRegLogFile)"
                 $machineInfo | Export-Csv -Path (Join-Path -Path $LogPath -ChildPath $MachineRegLogFile) -ErrorAction SilentlyContinue -ErrorVariable RegFailure -Encoding UTF8 -NoTypeInformation -Append
-                Write-Verbose "Saving regsitry data to $(Join-Path -Path $LogPath -ChildPath $AutopilotRegLogFile)"
+                Write-Verbose "Saving registry data to $(Join-Path -Path $LogPath -ChildPath $AutopilotRegLogFile)"
                 $autoPilotInfo | Export-Csv -Path (Join-Path -Path $LogPath -ChildPath $AutopilotRegLogFile) -ErrorAction SilentlyContinue -ErrorVariable RegFailure -Encoding UTF8 -NoTypeInformation -Append
-                Write-Verbose "Saving regsitry data to $(Join-Path -Path $LogPath -ChildPath $EventLogFile)"
+                Write-Verbose "Saving registry data to $(Join-Path -Path $LogPath -ChildPath $EventLogFile)"
                 $events | Export-Csv -Path (Join-Path -Path $LogPath -ChildPath $EventLogFile) -ErrorAction SilentlyContinue -ErrorVariable EventFailure -Encoding UTF8 -NoTypeInformation -Append
             }
         }
